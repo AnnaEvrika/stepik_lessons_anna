@@ -1,49 +1,6 @@
-1. <div class="form-group first_class">
-            <label>First name*</label>
-            <input name="username" id="name" random_tag type="text" class="form-control first-class" placeholder="Input your first name" maxlength="32" required>
-        </div>
-ID = name
-Name = username
-XPath = //input[@required][@random_thing]
-Class name = first-class
-CSS selector = input.first-class
+input#name
+//input[@name="username"]
+input.first-class
+//input/@random_tag
+//input[@class="form-control first-class"]
 
-2.   <div class="form-group last_name">
-                <label>Last name*</label>
-                <input name="last_user_name" id="last_name" random_tag_2 type="text" class="form-control last_name" placeholder="Input your last name" maxlength="32" required>
-            </div>
-ID = last_name
-Name = last_user_name
-XPath = //input[@required][@random_tag]
-Class name = last_name
-CSS selector = input.last_name
-
-3. <div class="form-group users_email">
-                <label>Email*</label>
-                <input name="users_email" id="email" random_tag_3 type="text" class="form-control users_email" placeholder="Input your email" maxlength="32" required>
-            </div>
-ID = email
-Name = users_email
-XPath = //input[@required][@random_tag_3]
-Class name = users_email
-CSS selector = input.users_email
-
-4.  <div class="form-group users_phone">
-                <label>Phone:</label>
-                <input name="users_phone" id="phone" random_tag_4 type="text" class="form-control users_phone" placeholder="Input your phone:" maxlength="32">
-            </div>
-ID = phone
-Name = users_phone
-XPath = //input[@required][@random_tag_4]
-Class name = users_phone
-CSS selector = input.users_phone
-
-5. <div class="form-group users_address">
-                <label>Address:</label>
-                <input name="users_address" id="address" random_tag_5 type="text" class="form-control users_address" placeholder="Input your address:" maxlength="32">
-            </div>
-ID = address
-Name = users_address
-XPath = //input[@required][@random_tag_5]
-Class name = users_address
-CSS selector = input.users_address
