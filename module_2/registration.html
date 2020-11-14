@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Registration</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <script src="jquery_min.js"></script>
+</head>
+
+<body class="bg-light">
+<div class="container" style="padding-top: 90px;">
+
+    <h1>Registration</h1>
+    <p>Please <a href="http://suninjuly.github.io/registration2.html">submit</a> some information about you below:</p>
+
+    <form action="registration_result.html" method="get">
+        <div class="first_block">
+            <div class="form-group first_class">
+                <label>First name*</label>
+                <input name="username" id="name" random_tag="random1" type="text" class="form-control first-class" placeholder="Input your first name" maxlength="32" required>
+            </div>
+            <div class="form-group last_name">
+                <label>Last name*</label>
+                <input name="last_user_name" id="last_name" random_tag_2="random2" type="text" class="form-control last_name" placeholder="Input your last name" maxlength="32" required>
+            </div>
+
+            <div class="form-group users_email">
+                <label>Email*</label>
+                <input name="users_email" id="email" random_tag_3="random3" type="text" class="form-control users_email" placeholder="Input your email" maxlength="32" required>
+            </div>
+        </div>
+        <div class="second_block">
+            <div class="form-group users_phone">
+                <label>Phone:</label>
+                <input name="users_phone" id="phone" random_tag_4="random4" type="text" class="form-control users_phone" placeholder="Input your phone:" maxlength="32">
+            </div>
+            <div class="form-group users_address">
+                <label>Address:</label>
+                <input name="users_address" id="address" random_tag_5="random5" type="text" class="form-control users_address" placeholder="Input your address:" maxlength="32">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+
+</html>
