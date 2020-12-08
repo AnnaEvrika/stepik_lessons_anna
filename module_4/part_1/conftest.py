@@ -1,37 +1,31 @@
-from selenium import webdriver
 import pytest
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-# user_language = 'ru', 'en-GB', 'es', 'fr'
-# options = Options()
-# options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-# browser = webdriver.Chrome(options=options)
-
 def pytest_add_option(parser):
-    parser.addoption('--language', action='store', default=None,
+    parser.addoption('--language', action='store', default='ru',
                      help="Choose browser language: 'ru', 'en-GB', 'es', 'fr'")
 
 
+# фикстура browser
 @pytest.fixture(scope="function")
 def browser(request):
+    # обработчик опции language
     user_language = request.config.getoption("language")
     options = Options()
-    options.add_experimental_option('pref', {'intl.accept_languages': user_language})
-    if user_language == "ru":
-        print("\nstart chrome browser for test..")
-        browser = webdriver.Chrome(options=options)
-    elif user_language == "en-GB":
-        print("\nstart firefox browser for test..")
-        browser = webdriver.Chrome(options=options)
-    elif user_language == "es":
-        print("\nstart firefox browser for test..")
-        browser = webdriver.Chrome(options=options)
-    elif user_language == "fr":
-        print("\nstart firefox browser for test..")
-        browser = webdriver.Chrome(options=options)
 
-    else:
-        raise pytest.UsageError("browser language must be in range of: 'ru', 'en-GB', 'es', 'fr'")
+    if user_language in ["ru", "en-GB", "es", "fr"]:
+        options.add_experimental_option('pref', {'intl.accept_languages': user_language})
+        raise pytest.UsageError("Achtung! The browser language is incorrect. The browser language must be 'ru', "
+                                "'en-GB', 'es', 'fr'")
+
+    browser = webdriver.Chrome(options=options)
+    browser.implicitly_wait(5)
+
+    # передача языка в объект браузера
+    browser.user_language = user_language
+
+    # закрытие браузера после прохождения теста
     yield browser
     browser.quit()
