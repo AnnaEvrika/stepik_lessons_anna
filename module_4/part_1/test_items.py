@@ -1,19 +1,27 @@
-def test_items(browser):
+from selenium.webdriver.common.by import By
+
+button_add_to_basket_dictionary = {
+    'ru': 'Добавить в корзину',
+    'en-gb': 'Add to basket',
+    'es': 'Añadir al carrito',
+    'fr': 'Ajouter au panier'
+}
+
+
+def test_button_add_to_basket(browser):
+    # Data
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-    try:
-        # Arrange
-        browser.get(link)
-        button_add_to_basket_locator = browser.find_element_by_css_selector("button[class='btn btn-lg btn-primary btn-add-to-basket']").text
+    button_add_to_basket_locator = '.btn-add-to-basket'
+    site_language = browser.user_language
+    button_add_to_basket_text = button_add_to_basket_dictionary[site_language]
 
-        # Act
-        button_add_to_basket_actual_text = "{}".format(button_add_to_basket_locator)
-        print("actual text " + button_add_to_basket_actual_text)
-        button_add_to_basket_expected_text = "{}".format(button_add_to_basket_locator)
-        print("expected text " + button_add_to_basket_expected_text)
+    # Arrange
+    browser.get(link)
 
-        # Assert
-        assert button_add_to_basket_actual_text in button_add_to_basket_expected_text, "Please, check your browser language"
+    # Act
+    button_add_to_basket = browser.find_element(By.CSS_SELECTOR, button_add_to_basket_locator)
 
-    finally:
-        browser.quit()
+    # Assert
+    assert button_add_to_basket_text in button_add_to_basket.text, 'Achtung! The text of the button is incorrect'
+
 
