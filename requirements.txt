@@ -1,7 +1,7 @@
-pip~=20.2
-configparser~=5.0.0
-py~=1.8.1
-lxml~=4.5.0
-setuptools~=41.2.0
+pip~=20.3.1
+configparser~=5.0.1
+py~=1.9.0
+lxml~=4.6.2
+setuptools~=51.0.0
 selenium~=3.141.0
-pytest~=5.4.3
+pytest~=6.1.2
