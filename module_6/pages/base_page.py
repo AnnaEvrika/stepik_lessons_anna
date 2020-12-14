@@ -1,5 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
 
 
 class BasePage():
