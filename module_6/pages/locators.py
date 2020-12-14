@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    link_Main_page_locator = "http://selenium1py.pythonanywhere.com/"
+    button_login_locator = (By.CSS_SELECTOR, "#login_link")
 
 
 class LoginPageLocators:
