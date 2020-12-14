@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
-    link_Main_page_locator = "http://selenium1py.pythonanywhere.com/"
+    link_main_page = "http://selenium1py.pythonanywhere.com/"
     button_login_locator = (By.CSS_SELECTOR, "#login_link")
 
 
@@ -18,3 +18,6 @@ class LoginPageLocators:
     place_password_repead_locator = (By.CSS_SELECTOR, '[name="registration-password2"]')
     button_registration_locator = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
+class ProductPageLocators:
+    link_product_page = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/"
+    
