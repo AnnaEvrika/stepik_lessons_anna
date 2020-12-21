@@ -10,21 +10,16 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # проверка URL на корректность
-        assert ('http://selenium1py.pythonanywhere.com/' and 'accounts/login/') in self.browser.current_url, \
-            "Incorrect URL"
+        assert "login" in self.browser.current_url, "'login' is not in current url of browser"
+        assert True
 
     def should_be_login_form(self):
         # проверка наличия формы авторизации
-        assert self.check_element_is_present(LoginPageLocators.form_login), "Login form is missing on the page"
-        assert self.check_element_is_present(LoginPageLocators.place_email_address_locator), "Invalid email address"
-        assert self.check_element_is_present(LoginPageLocators.place_password_locator), "Incorrect password"
-        assert self.check_element_is_present(LoginPageLocators.button_login_locator), "Incorrect button"
+        assert self.is_element_present(*LoginPageLocators.form_login), "Login form is not found"
+        assert True
 
     def should_be_register_form(self):
         # проверка наличия формы регистрации
-        assert self.check_element_is_present(LoginPageLocators.form_register), "Registration form is missing on the page"
-        assert self.check_element_is_present(LoginPageLocators.place_registration_email_locator), "Invalid email address"
-        assert self.check_element_is_present(LoginPageLocators.place_password_locator), "Incorrect password"
-        assert self.check_element_is_present(LoginPageLocators.place_password_repead_locator), "Incorrect password"
-        assert self.check_element_is_present(LoginPageLocators.button_registration_locator), "Incorrect button"
+        assert self.is_element_present(*LoginPageLocators.form_register), "Registration form is not found"
+        assert True
 

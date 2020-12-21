@@ -6,7 +6,7 @@ from .locators import ProductPageLocators
 class ProductPage(BasePage):
 
     def should_be_product_page(self):
-        #self.should_be_login_url()
+        self.should_be_login_url()
         self.should_be_add_btn()
         self.add_to_basket()
         self.should_not_be_success_message()
@@ -19,12 +19,12 @@ class ProductPage(BasePage):
 
     def should_be_add_btn(self):
         # проверка, что есть кнопка добавленияв корзину
-        basket_btn = self.is_element_present(*ProductPageLocators.ADD_TO_BASKET)
-        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Button is not presented"
+        add_basket = self.is_element_present(*ProductPageLocators.button_add_basket)
+        assert self.is_element_present(*ProductPageLocators.button_add_basket), "Button is not presented"
         assert True
 
     def add_to_basket(self):
-        basket_btn = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
+        basket_btn = self.browser.find_element(*ProductPageLocators.button_add_basket)
         basket_btn.click()
         assert True
 

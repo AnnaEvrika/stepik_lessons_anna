@@ -3,8 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-def pytest_addoption(parser):
-    parser.addoption('--language', action='store', default='ru',
+def pytest_add_option(parser):
+    parser.addoption('--language', action='store', default='en-GB',
                      help="Choose browser language: 'ru', 'en-GB', 'es', 'fr'")
 
 
@@ -16,7 +16,7 @@ def browser(request):
     options = Options()
 
     if user_language in ["ru", "en-GB", "es", "fr"]:
-        options.add_experimental_option('pref', {'intl.accept_languages': user_language})
+        options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
     else:
         raise pytest.UsageError("Achtung! The browser language is incorrect. The browser language must be 'ru', "
                                 "'en-GB', 'es', 'fr'")

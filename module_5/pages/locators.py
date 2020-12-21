@@ -31,7 +31,6 @@ class ProductPageLocators:
     page_header = (By.CSS_SELECTOR, ".page-header")
     link_home_page = (By.PARTIAL_LINK_TEXT, "/en-gb/")
     search_line = (By.CSS_SELECTOR, "#id_q")
-    # button_seach =
     button_view_basket = (By.PARTIAL_LINK_TEXT, "/basket/")
-
+    button_add_basket = (By.CSS_SELECTOR, '.btn.btn-lg.btn-primary.btn-add-to-basket')
 

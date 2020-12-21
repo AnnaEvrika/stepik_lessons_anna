@@ -1,0 +1,5 @@
+#!c:\users\1395306\pycharmprojects\stepik---auto-tests-course-\seleniumenv\scripts\python.exe
+
+import newrelic.admin
+
+newrelic.admin.main()
