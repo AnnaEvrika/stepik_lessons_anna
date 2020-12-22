@@ -15,9 +15,8 @@ def browser(request):
     user_language = request.config.getoption("language")
     options = Options()
 
-    if user_language in ["ru", "en-GB", "es", "fr"]:
+    if user_language not in ["ru", "en-GB", "es", "fr"]:
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-    else:
         raise pytest.UsageError("Achtung! The browser language is incorrect. The browser language must be 'ru', "
                                 "'en-GB', 'es', 'fr'")
 
@@ -30,3 +29,4 @@ def browser(request):
     # закрытие браузера после прохождения теста
     yield browser
     browser.quit()
+

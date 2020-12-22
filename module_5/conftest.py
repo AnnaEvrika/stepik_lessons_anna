@@ -1,31 +1,29 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from datetime import datetime
+
+def pytest_addoption(parser):
+    parser.addoption('--browser', action='store', default="chrome",
+                     help="Choose browser: chrome or firefox")
 
 
-def pytest_add_option(parser):
-    parser.addoption('--language', action='store', default='en-GB',
-                     help="Choose browser language: 'ru', 'en-GB', 'es', 'fr'")
-
-
-# фикстура browser
 @pytest.fixture(scope="function")
 def browser(request):
-    # обработчик опции language
-    user_language = request.config.getoption("language")
-    options = Options()
-
-    if user_language not in ["ru", "en-GB", "es", "fr"]:
-        options.add_experimental_option('pref', {'intl.accept_languages': user_language})
-        raise pytest.UsageError("Achtung! The browser language is incorrect. The browser language must be 'ru', "
-                                "'en-GB', 'es', 'fr'")
-
-    browser = webdriver.Chrome(options=options)
-    browser.implicitly_wait(5)
-
-    # передача языка в объект браузера
-    browser.user_language = user_language
-
-    # закрытие браузера после прохождения теста
+    browser_name = request.config.getoption("browser")
+    if browser_name == "chrome":
+        print("\nstart chrome browser for test..")
+        browser = webdriver.Chrome()
+        browser.maximize_window()
+    elif browser_name == "firefox":
+        print("\nstart firefox browser for test..")
+        browser = webdriver.Firefox()
+    else:
+        print("Browser {} still is not implemented".format(browser_name))
     yield browser
+    print("\nquit browser..")
+    # получаем переменную с текущей датой и временем в формате ГГГГ-ММ-ДД_ЧЧ-ММ-СС
+    now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    # делаем скриншот с помощью команды Selenium'а и сохраняем его с именем "screenshot-ГГГГ-ММ-ДД_ЧЧ-ММ-СС"
+    browser.save_screenshot('screenshot-%s.png' % now)
     browser.quit()
+

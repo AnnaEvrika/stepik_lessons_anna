@@ -8,7 +8,7 @@ button_add_to_basket_dictionary = {
 }
 
 
-def test_button_add_to_basket(browser):
+def test_button_add_to_basket_text(browser):
     # Data
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     button_add_to_basket_locator = '.btn-add-to-basket'
