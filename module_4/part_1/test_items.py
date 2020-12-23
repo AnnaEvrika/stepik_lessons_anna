@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 button_add_to_basket_dictionary = {
     'ru': 'Добавить в корзину',
-    'en-gb': 'Add to basket',
+    'en-GB': 'Add to basket',
     'es': 'Añadir al carrito',
     'fr': 'Ajouter au panier'
 }
