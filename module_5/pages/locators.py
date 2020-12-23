@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+class GeneralLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class MainPageLocators:
     link_main_page = "http://selenium1py.pythonanywhere.com/"
@@ -33,4 +35,9 @@ class ProductPageLocators:
     search_line = (By.CSS_SELECTOR, "#id_q")
     button_view_basket = (By.PARTIAL_LINK_TEXT, "/basket/")
     button_add_basket = (By.CSS_SELECTOR, '.btn.btn-lg.btn-primary.btn-add-to-basket')
+
+class BasePageLocators(GeneralLocators):
+    login_link_invalid = (By.CSS_SELECTOR, "#login_link_inc")
+    basket_link = (By.CSS_SELECTOR, "div.basket-mini span a.btn.btn-default")
+    user_icon = (By.CSS_SELECTOR, ".icon-user")
 

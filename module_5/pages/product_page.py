@@ -19,8 +19,8 @@ class ProductPage(BasePage):
 
     def should_be_add_btn(self):
         # проверка, что есть кнопка добавленияв корзину
-        add_basket = self.is_element_present(*ProductPageLocators.button_add_basket)
-        assert self.is_element_present(*ProductPageLocators.button_add_basket), "Button is not presented"
+        add_basket = self.check_element_is_present(*ProductPageLocators.button_add_basket)
+        assert self.check_element_is_present(*ProductPageLocators.button_add_basket), "Button is not presented"
         assert True
 
     def add_to_basket(self):
