@@ -8,3 +8,4 @@ class Links():
 class User():
     user_email = "testuser_456@123.com"
     user_password = "qazxswedc123"
+

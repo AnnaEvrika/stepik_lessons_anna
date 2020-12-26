@@ -3,8 +3,9 @@ from selenium import webdriver
 from datetime import datetime
 
 def pytest_addoption(parser):
-    parser.addoption('--browser', action='store', default="chrome",
-                     help="Choose browser: chrome or firefox")
+    parser.addoption('--browser', action='store', default="chrome", help="Choose browser: chrome or firefox")
+    parser.addoption('--language', action='store', default='en',
+                     help="Choose browser language: 'ru', 'en-GB', 'es', 'fr'")
 
 
 @pytest.fixture(scope="function")

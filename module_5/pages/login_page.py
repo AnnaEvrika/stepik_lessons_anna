@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import LoginPageLocators
+from .locators import LoginPageLocators, BasePageLocators
 from .data import Links
 
 
@@ -36,3 +36,7 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.check_element_is_present(*LoginPageLocators.form_register), "Register form is not presented"
+
+    def should_be_authorized_user(self):
+        assert self.check_element_is_present(*BasePageLocators.user_icon), \
+            "User icon is not presented, probably unauthorised user"

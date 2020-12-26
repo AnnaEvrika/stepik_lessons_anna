@@ -40,6 +40,17 @@ class ProductPageLocators:
     search_line = (By.CSS_SELECTOR, "#id_q")
     button_view_basket = (By.PARTIAL_LINK_TEXT, "/basket/")
     button_add_basket = (By.CSS_SELECTOR, '.btn.btn-lg.btn-primary.btn-add-to-basket')
+    success_message = (By.CSS_SELECTOR, "#messages .alert-success")
+    ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, "#add_to_basket_form .btn-add-to-basket")
+    product_was_added_success_alert = (By.CSS_SELECTOR, "#messages .alert-success .alertinner")
+    product_was_added_info_alert = (By.CSS_SELECTOR, "#messages .alert-info .alertinner")
+    product_name_on_page = (By.CSS_SELECTOR, ".product_main h1")
+    product_price_on_page = (By.CSS_SELECTOR, ".product_main p.price_color")
+
+
+class BasketPageLocators(GeneralLocators):
+    empty_basket_message = (By.CSS_SELECTOR, "#content_inner")
+    products_in_basket = (By.CSS_SELECTOR, "#basket_formset")
 
 
 class BasePageLocators(GeneralLocators):

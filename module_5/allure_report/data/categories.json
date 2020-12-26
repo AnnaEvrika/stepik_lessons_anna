@@ -1,0 +1,39 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'WebDriver' object has no attribute 'user_language'",
+      "children" : [ {
+        "name" : "test_guest_cant_see_product_in_basket_opened_from_product_page",
+        "uid" : "979d1eb10ac34dc6",
+        "parentUid" : "7f9fb24248acf760bee67b6b6b4defd1",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609022617024,
+          "stop" : 1609022632741,
+          "duration" : 15717
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_user_can_add_product_to_basket",
+        "uid" : "cb14ed1c851914c",
+        "parentUid" : "7f9fb24248acf760bee67b6b6b4defd1",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609022767858,
+          "stop" : 1609022775614,
+          "duration" : 7756
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7f9fb24248acf760bee67b6b6b4defd1"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

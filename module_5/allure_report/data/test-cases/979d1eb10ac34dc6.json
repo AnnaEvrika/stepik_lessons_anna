@@ -1,0 +1,125 @@
+{
+  "uid" : "979d1eb10ac34dc6",
+  "name" : "test_guest_cant_see_product_in_basket_opened_from_product_page",
+  "fullName" : "module_5.test_product_page.TestProductPage#test_guest_cant_see_product_in_basket_opened_from_product_page",
+  "historyId" : "6220e4d59ea3b4d9eed2df2356be19f3",
+  "time" : {
+    "start" : 1609022617024,
+    "stop" : 1609022632741,
+    "duration" : 15717
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'WebDriver' object has no attribute 'user_language'",
+  "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x052F1940>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"c5ac78caf917ac0785dd8d33b03ff61e\")>\n\n    def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):\n        # Arrange\n        page = ProductPage(browser)\n        page.open()\n    \n        # Act\n        page.go_to_basket_page()\n        basket_page = BasketPage(browser)\n    \n        # Assert\n        basket_page.should_not_be_product_in_basket()\n>       basket_page.should_be_empty_basket_message()\n\nmodule_5\\test_product_page.py:60: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.basket_page.BasketPage object at 0x05402268>\n\n    def should_be_empty_basket_message(self):\n        message = self.browser.find_element(*BasketPageLocators.empty_basket_message).text\n>       assert LANGUAGES_DICT[self.browser.user_language]['empty_basket'] in message, \\\n            \"Empty basket message is not, but should be.\"\nE       AttributeError: 'WebDriver' object has no attribute 'user_language'\n\nmodule_5\\pages\\basket_page.py:19: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1609022611745,
+      "stop" : 1609022617023,
+      "duration" : 5278
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1609022480748,
+      "stop" : 1609022480831,
+      "duration" : 83
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'WebDriver' object has no attribute 'user_language'",
+    "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x052F1940>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"c5ac78caf917ac0785dd8d33b03ff61e\")>\n\n    def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):\n        # Arrange\n        page = ProductPage(browser)\n        page.open()\n    \n        # Act\n        page.go_to_basket_page()\n        basket_page = BasketPage(browser)\n    \n        # Assert\n        basket_page.should_not_be_product_in_basket()\n>       basket_page.should_be_empty_basket_message()\n\nmodule_5\\test_product_page.py:60: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.basket_page.BasketPage object at 0x05402268>\n\n    def should_be_empty_basket_message(self):\n        message = self.browser.find_element(*BasketPageLocators.empty_basket_message).text\n>       assert LANGUAGES_DICT[self.browser.user_language]['empty_basket'] in message, \\\n            \"Empty basket message is not, but should be.\"\nE       AttributeError: 'WebDriver' object has no attribute 'user_language'\n\nmodule_5\\pages\\basket_page.py:19: AttributeError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a772e9e163cb1c46",
+      "name" : "stdout",
+      "source" : "a772e9e163cb1c46.txt",
+      "type" : "text/plain",
+      "size" : 49
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1609022632764,
+      "stop" : 1609022635334,
+      "duration" : 2570
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_product_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProductPage"
+  }, {
+    "name" : "host",
+    "value" : "Anna"
+  }, {
+    "name" : "thread",
+    "value" : "3988-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "module_5.test_product_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "979d1eb10ac34dc6.json",
+  "parameterValues" : [ ]
+}

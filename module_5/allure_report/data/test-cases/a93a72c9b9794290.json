@@ -1,0 +1,127 @@
+{
+  "uid" : "a93a72c9b9794290",
+  "name" : "test_guest_can_add_product_to_basket[http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3]",
+  "fullName" : "module_5.test_product_page.TestProductPage#test_guest_can_add_product_to_basket",
+  "historyId" : "684796ec40d13ba79205cc5ba131e97a",
+  "time" : {
+    "start" : 1609022559889,
+    "stop" : 1609022559890,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "statusMessage" : "ValueError: could not convert string to float: 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'",
+  "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x05375058>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f3d33307472d7cd97b9d4f7eeb4d1057\")>\nlink = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\n    @pytest.mark.parametrize('link',\n                             [\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9\"])\n    # \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear\"\n    \n    \n    @pytest.mark.xfail(reason=\"Задание: проверка независимости контента, поиск бага\")\n    def test_guest_can_add_product_to_basket(self, browser, link):\n        # Data\n        product_name = \"Coders at Work\"\n        template = \"{} has been added to your basket.\"\n        basket_total_price = \"£19.99\"\n    \n        # Arrange\n        link = f\"{link}\"\n>       page = ProductPage(browser,\n                           link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес\n\nmodule_5\\test_product_page.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nmodule_5\\pages\\product_page.py:12: in __init__\n    self.browser.implicitly_wait(timeout)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f3d33307472d7cd97b9d4f7eeb4d1057\")>, time_to_wait = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\n    def implicitly_wait(self, time_to_wait):\n        \"\"\"\n        Sets a sticky timeout to implicitly wait for an element to be found,\n           or a command to complete. This method only needs to be called one\n           time per session. To set the timeout for calls to\n           execute_async_script, see set_script_timeout.\n    \n        :Args:\n         - time_to_wait: Amount of time to wait (in seconds)\n    \n        :Usage:\n            driver.implicitly_wait(30)\n        \"\"\"\n        if self.w3c:\n            self.execute(Command.SET_TIMEOUTS, {\n>               'implicit': int(float(time_to_wait) * 1000)})\nE           ValueError: could not convert string to float: 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\nseleniumenv\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:900: ValueError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1609022480748,
+      "stop" : 1609022480831,
+      "duration" : 83
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1609022554627,
+      "stop" : 1609022559888,
+      "duration" : 5261
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "ValueError: could not convert string to float: 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'",
+    "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x05375058>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f3d33307472d7cd97b9d4f7eeb4d1057\")>\nlink = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\n    @pytest.mark.parametrize('link',\n                             [\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9\"])\n    # \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear\"\n    \n    \n    @pytest.mark.xfail(reason=\"Задание: проверка независимости контента, поиск бага\")\n    def test_guest_can_add_product_to_basket(self, browser, link):\n        # Data\n        product_name = \"Coders at Work\"\n        template = \"{} has been added to your basket.\"\n        basket_total_price = \"£19.99\"\n    \n        # Arrange\n        link = f\"{link}\"\n>       page = ProductPage(browser,\n                           link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес\n\nmodule_5\\test_product_page.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nmodule_5\\pages\\product_page.py:12: in __init__\n    self.browser.implicitly_wait(timeout)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f3d33307472d7cd97b9d4f7eeb4d1057\")>, time_to_wait = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\n    def implicitly_wait(self, time_to_wait):\n        \"\"\"\n        Sets a sticky timeout to implicitly wait for an element to be found,\n           or a command to complete. This method only needs to be called one\n           time per session. To set the timeout for calls to\n           execute_async_script, see set_script_timeout.\n    \n        :Args:\n         - time_to_wait: Amount of time to wait (in seconds)\n    \n        :Usage:\n            driver.implicitly_wait(30)\n        \"\"\"\n        if self.w3c:\n            self.execute(Command.SET_TIMEOUTS, {\n>               'implicit': int(float(time_to_wait) * 1000)})\nE           ValueError: could not convert string to float: 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'\n\nseleniumenv\\lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:900: ValueError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2fdfaf98a21df5ef",
+      "name" : "stdout",
+      "source" : "2fdfaf98a21df5ef.txt",
+      "type" : "text/plain",
+      "size" : 49
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1609022559925,
+      "stop" : 1609022562429,
+      "duration" : 2504
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='Задание: проверка независимости контента, поиск бага')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_product_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProductPage"
+  }, {
+    "name" : "host",
+    "value" : "Anna"
+  }, {
+    "name" : "thread",
+    "value" : "3988-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "module_5.test_product_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "link",
+    "value" : "'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail(reason='Задание: проверка независимости контента, поиск бага')" ]
+  },
+  "source" : "a93a72c9b9794290.json",
+  "parameterValues" : [ "'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3'" ]
+}
