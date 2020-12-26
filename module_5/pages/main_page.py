@@ -12,7 +12,7 @@ class MainPage(BasePage):
     def should_be_login_link(self):
         assert self.check_element_is_present(*MainPageLocators.button_login_locator), "Button login link is not found"
 
-    def go_to_login_page(self):
+    def check_go_to_login_page(self):
         link = self.browser.find_element(*MainPageLocators.button_login_locator)
         link.click()
 
