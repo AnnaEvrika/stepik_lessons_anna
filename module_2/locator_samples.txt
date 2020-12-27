@@ -1,6 +1,0 @@
-input#name
-//input[@name="username"]
-input.first-class
-//input/@random_tag
-//input[@class="form-control first-class"]
-
