@@ -1,8 +1,6 @@
 import pytest
 
 from .pages.product_page import ProductPage
-#
-# link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/"
 
 
 class TestProductPage:
