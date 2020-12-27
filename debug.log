@@ -22,3 +22,8 @@
 [1227/063323.214:ERROR:exception_snapshot_win.cc(99)] thread ID 17816 not found in process
 [1227/063323.268:ERROR:process_reader_win.cc(123)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены. (0xc0000022)
 [1227/063323.268:ERROR:exception_snapshot_win.cc(99)] thread ID 10476 not found in process
+[1227/142953.769:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: Идет закрытие канала. (0xE8)
+[1227/143205.857:ERROR:process_reader_win.cc(123)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены. (0xc0000022)
+[1227/143205.861:ERROR:exception_snapshot_win.cc(99)] thread ID 18996 not found in process
+[1227/143205.912:ERROR:process_reader_win.cc(123)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены. (0xc0000022)
+[1227/143205.912:ERROR:exception_snapshot_win.cc(99)] thread ID 16424 not found in process
