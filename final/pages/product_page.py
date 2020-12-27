@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
-from final.data import Links
-from final.data.locators import ProductPageLocators, BasePageLocators
+from final.data.locators import ProductPageLocators, BasePageLocators, BasketPageLocators
+from ..data.data import Links
 
 
 class ProductPage(BasePage):
@@ -9,7 +9,7 @@ class ProductPage(BasePage):
     def __init__(self, browser, timeout=10):
         self.browser = browser
         self.url = Links.product_page_link
-        self.browser.implicitly_wait(timeout)
+        #self.browser.implicitly_wait(timeout)
 
     def should_be_product_page(self):
         self.should_be_login_url()
@@ -31,6 +31,10 @@ class ProductPage(BasePage):
         basket_btn = self.browser.find_element(*ProductPageLocators.button_add_basket)
         basket_btn.click()
         assert True
+
+    def delete_from_basket(self):
+        remove_button = self.browser.find_element(*BasketPageLocators.remove_link)
+        remove_button.click()
 
     def check_add_to_basket_notification(self, expected_product_name, expected_notification_template):
         expected_notification_text = expected_notification_template.format(expected_product_name)
@@ -77,3 +81,8 @@ class ProductPage(BasePage):
 
     def should_be_login_link(self):
         assert self.check_element_is_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def click_add_to_basket_btn(self):
+        add_to_basket_btn = self.browser.find_element(*ProductPageLocators.button_add_basket)
+        add_to_basket_btn.click()
+

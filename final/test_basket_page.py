@@ -1,50 +1,28 @@
 import pytest
-from final.pages.main_page import MainPage
-from final.pages.login_page import LoginPage
-from final.pages.basket_page import BasketPage
+
+from .pages.product_page import ProductPage
+#
+# link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/"
 
 
-class TestMainPage:
-    def test_guest_should_see_login_link(self, browser):
+class TestProductPage:
+    @pytest.mark.parametrize('link',
+                             ["http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/",
+                              "http://selenium1py.pythonanywhere.com/en-gb/catalogue/hacking-exposed-wireless_208/",
+                              "http://selenium1py.pythonanywhere.com/en-gb/catalogue/studyguide-for-counter-hack-reloaded_205/"
+                              ])
+    def test_guest_can_add_product_to_basket(self, browser, link):
+
         # Arrange
-        page = MainPage(browser)
+        page = ProductPage(browser, link)
         page.open()
-
-        # Assert
-        page.should_be_login_link()
-
-    def test_guest_can_go_to_login_page(self, browser):
-        # Arrange
-        page = MainPage(browser)
-        page.open()
-
         # Act
-        page.check_go_to_login_page()
-        login_page = LoginPage(browser)
-
+        page.add_to_basket()
+        page.go_to_basket_page()
         # Assert
-        login_page.should_be_login_page()
+        page.product_name_on_page()
+        page.product_price_on_page()
+        # After
+        page.delete_from_basket()
 
-
-@pytest.mark.login_guest
-class TestLoginFromMainPage():
-    def test_guest_can_go_to_login_page(self, browser):
-        # Arrange
-        page = MainPage(browser)
-        page.open()
-
-        # Act
-        page.check_go_to_login_page()
-        login_page = LoginPage(browser)
-
-        # Assert
-        login_page.should_be_login_page()
-
-    def test_guest_should_see_login_link(self, browser):
-        # Arrange
-        page = MainPage(browser)
-        page.open()
-
-        # Assert
-        page.should_be_login_link()
 

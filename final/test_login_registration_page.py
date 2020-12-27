@@ -58,7 +58,7 @@ class TestUserLoginRegister:
         page.check_logout_button()
 
     @pytest.mark.xfail
-    def test_user_login(self, browser):
+    def test_user_fail_login(self, browser):
         # Arrange
         page = LoginPage(browser)
         page.open()

@@ -50,16 +50,18 @@ class ProductPageLocators:
     success_message = (By.CSS_SELECTOR, "#messages .alert-success")
     product_was_added_success_alert = (By.CSS_SELECTOR, "#messages .alert-success .alertinner")
     product_was_added_info_alert = (By.CSS_SELECTOR, "#messages .alert-info .alertinner")
-    product_name_on_page = (By.CSS_SELECTOR, ".product_main h1")
-    product_price_on_page = (By.CSS_SELECTOR, ".product_main p.price_color")
+    product_name_on_page = (By.CSS_SELECTOR, ".col-sm-4 h3")
+    product_price_on_page = (By.CSS_SELECTOR, ".col-sm-1 .price_color.align-right")
 
 
 class BasketPageLocators(GeneralLocators):
     empty_basket_message = (By.CSS_SELECTOR, "#content_inner")
     products_in_basket = (By.CSS_SELECTOR, "#basket_formset")
+    remove_link = (By.CSS_SELECTOR, ".inline")
 
 
 class UserPageLocators:
     account_button = (By.PARTIAL_LINK_TEXT, "/accounts")
     logout_button = (By.CSS_SELECTOR, "#logout_link")
     welcome_message = (By.CSS_SELECTOR, "#messages .alertinner")
+
