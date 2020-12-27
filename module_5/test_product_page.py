@@ -123,7 +123,7 @@ class TestUserAddToBasketFromProductPage:
     def setup(self, browser):
         page = LoginPage(browser)
         page.open()
-        email = str(time.time()) + "@fakemail.org"
+        email = str(time.time()) + "@mailforspam.org"
         page.register_new_user(email, User.user_password)
         page.should_be_authorized_user()
         yield
