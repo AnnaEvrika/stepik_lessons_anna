@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from final.data.locators import LoginPageLocators, BasePageLocators, UserPageLocators
+from final.data.locators import LoginPageLocators, BasePageLocators, UserPageLocators, GeneralLocators
 from final.data.data import Links
 
 
@@ -32,6 +32,9 @@ class LoginPage(BasePage):
         password_login_input.send_keys(password)
         self.browser.find_element(*LoginPageLocators.button_login_locator).click()
 
+    def logout_user(self):
+        self.browser.find_element(*UserPageLocators.logout_button).click()
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
@@ -58,3 +61,7 @@ class LoginPage(BasePage):
     def check_logout_button(self):
         assert self.check_element_is_present(*BasePageLocators.icon_signout), \
             "Logout button is not presented, probably unauthorised user"
+
+    def check_login_button(self):
+        assert self.check_element_is_present(*GeneralLocators.LOGIN_LINK), \
+            "Login button is not presented, probably authorised user"

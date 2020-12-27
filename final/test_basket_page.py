@@ -1,6 +1,7 @@
 import pytest
 from final.pages.main_page import MainPage
 from final.pages.login_page import LoginPage
+from final.pages.basket_page import BasketPage
 
 
 class TestMainPage:

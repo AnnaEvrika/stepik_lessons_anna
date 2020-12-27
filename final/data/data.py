@@ -11,7 +11,8 @@ class Links():
 class User():
     user_email = "testuser_456@123.com"
     user_password = "qazxswedc123"
-
+    registration_repead_email = "testuser_87412565@mail654.com"
+    user_fail_email = "fail123564"
 
 class NewUser():
     registration_email = str(time.time()) + "@mailforspam.org"

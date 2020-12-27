@@ -61,5 +61,5 @@ class BasketPageLocators(GeneralLocators):
 
 class UserPageLocators:
     account_button = (By.PARTIAL_LINK_TEXT, "/accounts")
-    logout_button = (By.PARTIAL_LINK_TEXT, "/accounts/logout")
+    logout_button = (By.CSS_SELECTOR, "#logout_link")
     welcome_message = (By.CSS_SELECTOR, "#messages .alertinner")
